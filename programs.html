@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — TechBridge</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="programs.html" class="active">Programs</a></li>
+      <li><a href="index.html#internship">Internship</a></li>
+      <li><a href="tasks.html">Internship Journey</a></li>
+      <li><a href="challenges.html">Challenge Hub</a></li>
+      <li><a href="dashboard.html">Intern Dashboard</a></li>
+      <li><a href="index.html#contact" class="btn nav-cta">Apply Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:20px;">
+    <div class="wrap">
+      <div class="eyebrow">Learning Programs</div>
+      <h1 style="max-width:20ch;">Two ways into tech, both fully practical</h1>
+      <p class="hero-tag">Every TechBridge program is designed around doing, not just reading. Pick the track that matches the kind of problems you want to solve.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px;">
+    <div class="wrap grid-2">
+
+      <div class="card program-card">
+        <span class="program-tag">Data Analytics</span>
+        <h2 style="font-size:1.5rem;">Working with data, extracting insight</h2>
+        <p>You'll take raw, messy data and turn it into something a business could actually use — from a clean spreadsheet to a query that answers a real question.</p>
+        <h4 style="margin-top:6px; font-size:.9rem; color:var(--slate); text-transform:none;">Core skills</h4>
+        <div class="program-skills">
+          <span class="chip">Spreadsheet analysis</span>
+          <span class="chip">Data cleaning</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Data visualization</span>
+          <span class="chip">Business-focused analysis</span>
+        </div>
+      </div>
+
+      <div class="card program-card">
+        <span class="program-tag">Web Development</span>
+        <h2 style="font-size:1.5rem;">Designing and building for the web</h2>
+        <p>You'll build real, working pages — starting with structure and style, then adding interactivity, and using the same tools professional developers rely on.</p>
+        <h4 style="margin-top:6px; font-size:.9rem; color:var(--slate); text-transform:none;">Core skills</h4>
+        <div class="program-skills">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Git / GitHub</span>
+          <span class="chip">Building web projects</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Which track is for you?</div>
+        <h2>Both lead to the same 30-day internship</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size:1.15rem;">Choose Data Analytics if you enjoy…</h3>
+          <p style="margin-bottom:0;">Finding patterns, working in spreadsheets and tables, and explaining what a set of numbers actually means.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:1.15rem;">Choose Web Development if you enjoy…</h3>
+          <p style="margin-bottom:0;">Building things people can see and use, working with layout and design, and turning an idea into a working page.</p>
+        </div>
+      </div>
+      <div class="center mt-lg">
+        <a href="https://forms.gle/techbridge-internship-application" target="_blank" rel="noopener" class="btn btn-primary">Apply for the TechBridge Internship</a>
+        <a href="index.html" class="btn btn-outline" style="margin-left:12px;">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></div>
+        <p style="color:#9ba0c0; max-width:34ch;">Bridging Learning to Real-World Experience. A program by Baselink Services Limited.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="programs.html">Programs</a>
+        <a href="tasks.html">Internship Journey</a>
+        <a href="challenges.html">Challenge Hub</a>
+        <a href="dashboard.html">Intern Dashboard</a>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <a href="https://forms.gle/techbridge-internship-application" target="_blank" rel="noopener">Apply Now</a>
+        <a href="https://chat.whatsapp.com/techbridge-community" target="_blank" rel="noopener">WhatsApp Community</a>
+        <a href="mailto:techbridgebaslink@gmail.com">techbridgebaslink@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 TechBridge by Baselink Services Limited. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', () =>
+    document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

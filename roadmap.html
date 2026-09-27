@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internship Roadmap — TechBridge</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .track-toggle{ display:flex; gap:12px; margin-bottom:8px; }
+  .track-btn{
+    flex:1; padding:16px; border-radius:12px; border:1px solid var(--line); background:var(--card);
+    cursor:pointer; text-align:left; font-family:inherit;
+  }
+  .track-btn.active{ border-color:var(--circuit-deep); background:rgba(47,214,115,.08); }
+  .track-btn .t-name{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--ink); }
+  .track-btn .t-desc{ font-size:.86rem; color:var(--slate); }
+  .viewing-badge{
+    display:inline-flex; align-items:center; gap:8px; font-size:.85rem; color:var(--slate);
+    margin:20px 0 10px;
+  }
+  .viewing-badge strong{ color:var(--ink); font-family:var(--font-display); }
+  .rtask{
+    display:grid; grid-template-columns:64px 1fr auto; gap:16px; align-items:start;
+    padding:18px 0; border-top:1px solid var(--line);
+  }
+  .rtask:last-child{ border-bottom:1px solid var(--line); }
+  .rtask .rday{ font-family:var(--font-display); font-weight:600; color:var(--circuit-deep); font-size:.9rem; }
+  @media (max-width:700px){
+    .track-toggle{ flex-direction:column; }
+    .rtask{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="tasks.html">Internship Journey</a></li>
+      <li><a href="roadmap.html" class="active">Roadmap</a></li>
+      <li><a href="challenges.html">Challenge Hub</a></li>
+      <li><a href="dashboard.html">Intern Dashboard</a></li>
+      <li><a href="index.html#contact" class="btn nav-cta">Apply Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:16px;">
+    <div class="wrap">
+      <div class="eyebrow">30-Day Practical Internship · Two Tracks</div>
+      <h1 style="max-width:22ch;">See what you'd actually be doing, track by track</h1>
+      <p class="hero-tag">Choose a track to preview all eight tasks, when they land, and how the difficulty builds over the 30 days.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="track-toggle" id="trackToggle">
+        <button class="track-btn active" data-track="webdev" id="btn-webdev">
+          <div class="t-name">Web Development</div>
+          <div class="t-desc">Designing and building websites and web applications</div>
+        </button>
+        <button class="track-btn" data-track="data" id="btn-data">
+          <div class="t-name">Data Analytics</div>
+          <div class="t-desc">Working with data and extracting insights</div>
+        </button>
+      </div>
+
+      <div class="viewing-badge">Currently viewing: <strong id="viewingLabel">Web Development</strong></div>
+
+      <div id="taskList"></div>
+    </div>
+  </section>
+
+  <section class="alt center">
+    <div class="wrap">
+      <h2 style="font-size:1.4rem;">Ready to start the climb?</h2>
+      <a href="https://forms.gle/techbridge-internship-application" target="_blank" rel="noopener" class="btn btn-primary">Apply for the Internship</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></div>
+        <p style="color:#9ba0c0; max-width:34ch;">Bridging Learning to Real-World Experience. A program by Baselink Services Limited.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="programs.html">Programs</a>
+        <a href="tasks.html">Internship Journey</a>
+        <a href="challenges.html">Challenge Hub</a>
+        <a href="dashboard.html">Intern Dashboard</a>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <a href="https://forms.gle/techbridge-internship-application" target="_blank" rel="noopener">Apply Now</a>
+        <a href="https://chat.whatsapp.com/techbridge-community" target="_blank" rel="noopener">WhatsApp Community</a>
+        <a href="mailto:techbridgebaslink@gmail.com">techbridgebaslink@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 TechBridge by Baselink Services Limited. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/roadmap.js"></script>
+<script>
+  document.getElementById('navToggle').addEventListener('click', () =>
+    document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internship Journey — TechBridge</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .timeline{ position:relative; padding-left:32px; }
+  .timeline::before{
+    content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:var(--line);
+  }
+  .tl-item{ position:relative; margin-bottom:22px; }
+  .tl-dot{
+    position:absolute; left:-32px; top:6px; width:20px; height:20px; border-radius:50%;
+    background:var(--circuit); border:3px solid var(--paper); box-shadow:0 0 0 2px var(--circuit);
+  }
+  details.card{ cursor:pointer; }
+  details summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  details summary::-webkit-details-marker{ display:none; }
+  .tl-meta{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:6px; }
+  .day-badge{ font-family:var(--font-display); font-weight:600; color:var(--circuit-deep); font-size:.85rem; }
+  .summary-title{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; }
+  .chevron{ transition:transform .2s ease; color:var(--slate); }
+  details[open] .chevron{ transform:rotate(180deg); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="tasks.html" class="active">Internship Journey</a></li>
+      <li><a href="challenges.html">Challenge Hub</a></li>
+      <li><a href="dashboard.html">Intern Dashboard</a></li>
+      <li><a href="index.html#contact" class="btn nav-cta">Apply Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:16px;">
+    <div class="wrap">
+      <div class="eyebrow">30-Day Practical Internship</div>
+      <h1 style="max-width:22ch;">Eight tasks, one steady climb from beginner to advanced</h1>
+      <p class="hero-tag">This is the Web Development track of the TechBridge internship: eight practical, project-based tasks spread across 30 days. Tap a task to see what it involves.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px;">
+    <div class="wrap">
+      <div class="timeline" id="timeline">
+        <!-- Task items -->
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 1</span><span class="pill pill-not-started">Beginner</span></div>
+                <div class="summary-title">Task 1 — Build the TechBridge Homepage</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p class="mt-lg" style="margin-top:14px;">Create the first version of the TechBridge website using HTML and CSS — brand identity, program overview, and the application call-to-action.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 4</span><span class="pill pill-not-started">Beginner</span></div>
+                <div class="summary-title">Task 2 — Build the TechBridge Programs Experience</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Create a dedicated Programs experience presenting TechBridge's Data Analytics and Web Development tracks side by side.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card" open>
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 8</span><span class="pill pill-progress">Beginner → Intermediate</span></div>
+                <div class="summary-title">Task 3 — Build the Internship Tasks Experience</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Build the page you're looking at right now — an interface that lays out the internship journey so a new intern can see what's ahead.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 11</span><span class="pill pill-not-started">Beginner → Intermediate</span></div>
+                <div class="summary-title">Task 4 — Build an Interactive Task Tracker</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Use JavaScript to let visitors switch between the Data Analytics and Web Development tracks without reloading the page.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 15</span><span class="pill pill-not-started">Intermediate</span></div>
+                <div class="summary-title">Task 5 — Build the Intern Registration Experience</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Design a professional registration and onboarding interface for new TechBridge interns.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 19</span><span class="pill pill-not-started">Intermediate</span></div>
+                <div class="summary-title">Task 6 — Build the Task Submission System</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Create an interface through which interns can prepare and submit their task work for review.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 22</span><span class="pill pill-not-started">Intermediate</span></div>
+                <div class="summary-title">Task 7 — Build the Intern Dashboard</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Build a dashboard where an intern can view their profile, progress, tasks, and submissions in one place.</p>
+          </details>
+        </div>
+
+        <div class="tl-item"><span class="tl-dot"></span>
+          <details class="card">
+            <summary>
+              <div>
+                <div class="tl-meta"><span class="day-badge">DAY 26</span><span class="pill pill-not-started">Intermediate</span></div>
+                <div class="summary-title">Task 8 — Build the Complete TechBridge Internship Platform</div>
+              </div>
+              <span class="chevron">⌄</span>
+            </summary>
+            <p style="margin-top:14px;">Bring every component built during the internship together into one complete TechBridge platform.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="center mt-lg">
+        <a href="dashboard.html" class="btn btn-dark">See a Live Task Tracker in the Dashboard</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="images/techbridge-logo.png" alt="TechBridge logo"></div>
+        <p style="color:#9ba0c0; max-width:34ch;">Bridging Learning to Real-World Experience. A program by Baselink Services Limited.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="programs.html">Programs</a>
+        <a href="tasks.html">Internship Journey</a>
+        <a href="challenges.html">Challenge Hub</a>
+        <a href="dashboard.html">Intern Dashboard</a>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <a href="https://forms.gle/techbridge-internship-application" target="_blank" rel="noopener">Apply Now</a>
+        <a href="https://chat.whatsapp.com/techbridge-community" target="_blank" rel="noopener">WhatsApp Community</a>
+        <a href="mailto:techbridgebaslink@gmail.com">techbridgebaslink@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 TechBridge by Baselink Services Limited. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', () =>
+    document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>
