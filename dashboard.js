@@ -2,7 +2,7 @@
 // If the backend server isn't running, the dashboard shows a clear error
 // state instead of failing silently.
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "";
 
 let tasks = [];              // populated from the API
 let activeStatusFilter = "all";
