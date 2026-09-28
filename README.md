@@ -6,23 +6,21 @@ A single, evolving website built across the TechBridge Web Development internshi
 
 ```
 techbridge/
-├── index.html          Task 1 — Homepage
-├── programs.html        Task 2 — Programs experience
-├── tasks.html            Task 3 — Internship Journey (static timeline)
-├── roadmap.html          Task 4 — Interactive two-track roadmap (JS)
-├── challenges.html       Task 5 — Challenge Hub (JS filtering + modal)
-├── dashboard.html        Task 6 & 7 — Intern Dashboard (API-driven)
-├── css/style.css         Shared design system for every page
-├── js/
-│   ├── roadmap.js        Task 4 logic
-│   ├── challenges.js     Task 5 logic
-│   └── dashboard.js      Task 6/7 logic (talks to the backend API)
-├── images/
-│   └── techbridge-logo.png
-└── backend/              Task 7 — Node/Express API
-    ├── server.js
-    ├── package.json
-    └── data/tasks.json
+├── index.html
+├── programs.html
+├── tasks.html
+├── roadmap.html
+├── challenges.html
+├── dashboard.html
+├── style.css
+├── roadmap.js
+├── challenges.js
+├── dashboard.js
+├── server.js
+├── package.json
+├── tasks.json
+├── techbridge-logo.png
+└── vercel.json
 ```
 
 ## Running it
