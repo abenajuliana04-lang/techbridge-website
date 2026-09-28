@@ -14,6 +14,11 @@ app.use(express.json());
 // Serve the frontend files from the same Vercel deployment.
 app.use(express.static(__dirname));
 
+// Explicitly serve the TechBridge homepage at the root URL.
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 // CORS Setup
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
