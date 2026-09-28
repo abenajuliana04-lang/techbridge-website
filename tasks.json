@@ -1,10 +1,10 @@
 [
-{"id":1,"title":"Build the TechBridge Homepage","day":1,"description":"Create the branded TechBridge homepage with program information, internship details and a clear application CTA.","status":"completed"},
-{"id":2,"title":"Build the TechBridge Programs Experience","day":4,"description":"Present Data Analytics and Web Development, their skills, differentiation and internship application CTA.","status":"completed"},
-{"id":3,"title":"Build the Internship Tasks Experience","day":8,"description":"Present all eight internship tasks, their days, descriptions, progression and connected build pages.","status":"completed"},
-{"id":4,"title":"Build an Interactive Internship Roadmap","day":11,"description":"Use JavaScript to switch between the Data Analytics and Web Development tracks without refreshing.","status":"completed"},
-{"id":5,"title":"Build the TechBridge Challenge Hub","day":15,"description":"Create an interactive challenge library with track/difficulty filters and detail views.","status":"in-progress"},
-{"id":6,"title":"Build the Intern Dashboard","day":19,"description":"Create a dashboard with sample intern details, progress, task status filters, details and technology exploration.","status":"not-started"},
-{"id":7,"title":"Build the TechBridge Task Management API","day":22,"description":"Build the Node.js/Express API and connect the dashboard to task data with fetch().","status":"not-started"},
-{"id":8,"title":"Build the Complete TechBridge Internship Platform","day":26,"description":"Combine the homepage, programs, roadmap, challenges, dashboard and API into one complete platform.","status":"not-started"}
+  {"id":1,"title":"Build the TechBridge Homepage","day":1,"description":"Create the branded TechBridge homepage with program information, internship details and a clear application CTA.","status":"completed"},
+  {"id":2,"title":"Build the TechBridge Programs Experience","day":4,"description":"Present Data Analytics and Web Development, their skills, differentiation and internship application CTA.","status":"completed"},
+  {"id":3,"title":"Build the Internship Tasks Experience","day":8,"description":"Present all eight internship tasks, their days, descriptions, progression and connected build pages.","status":"completed"},
+  {"id":4,"title":"Build an Interactive Internship Roadmap","day":11,"description":"Use JavaScript to switch between the Data Analytics and Web Development tracks without refreshing.","status":"completed"},
+  {"id":5,"title":"Build the TechBridge Challenge Hub","day":15,"description":"Create an interactive challenge library with track and difficulty filters, search and detail views.","status":"completed"},
+  {"id":6,"title":"Build the Intern Dashboard","day":19,"description":"Create a dashboard with intern details, progress, task status filters, task details and technology exploration.","status":"completed"},
+  {"id":7,"title":"Build the TechBridge Task Management API","day":22,"description":"Build the Node.js/Express REST API and connect the dashboard to task data with fetch().","status":"completed"},
+  {"id":8,"title":"Build the Complete TechBridge Internship Platform","day":26,"description":"Integrate the homepage, programs, challenge hub, dashboard, task management API, search, responsive UI and documentation into one final platform.","status":"in-progress"}
 ]
