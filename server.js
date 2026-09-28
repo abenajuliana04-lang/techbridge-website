@@ -11,7 +11,7 @@ const DATA_FILE = path.join(__dirname, "tasks.json");
 
 app.use(express.json());
 
-// CORS
+// CORS Setup
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
@@ -23,6 +23,24 @@ app.use((req, res, next) => {
 
   next();
 });
+
+// Load initial tasks into memory to avoid Vercel filesystem errors
+let tasks = [];
+
+function loadTasks() {
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      const raw = fs.readFileSync(DATA_FILE, "utf-8");
+      tasks = JSON.parse(raw);
+    }
+  } catch (err) {
+    console.error("Error reading initial tasks file:", err);
+    tasks = [];
+  }
+}
+
+// Initial load
+loadTasks();
 
 // Home route
 app.get("/", (req, res) => {
@@ -43,95 +61,61 @@ app.get("/api/status", (req, res) => {
   });
 });
 
-// Read tasks
-function readTasks() {
-  const raw = fs.readFileSync(DATA_FILE, "utf-8");
-  return JSON.parse(raw);
-}
-
-// Write tasks
-function writeTasks(tasks) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(tasks, null, 2));
-}
-
 // GET /api/tasks
 app.get("/api/tasks", (req, res) => {
-  try {
-    const tasks = readTasks();
-    res.json(tasks);
-  } catch (err) {
-    res.status(500).json({
-      error: "Unable to read task data."
-    });
-  }
+  res.json(tasks);
 });
 
 // GET /api/tasks/:id
 app.get("/api/tasks/:id", (req, res) => {
-  try {
-    const tasks = readTasks();
+  const task = tasks.find(t => t.id === Number(req.params.id));
 
-    const task = tasks.find(
-      t => t.id === Number(req.params.id)
-    );
-
-    if (!task) {
-      return res.status(404).json({
-        error: "Task not found."
-      });
-    }
-
-    res.json(task);
-  } catch (err) {
-    res.status(500).json({
-      error: "Unable to read task data."
+  if (!task) {
+    return res.status(404).json({
+      error: "Task not found."
     });
   }
+
+  res.json(task);
 });
 
 // PUT /api/tasks/:id
 app.put("/api/tasks/:id", (req, res) => {
-  try {
-    const tasks = readTasks();
+  const task = tasks.find(t => t.id === Number(req.params.id));
 
-    const task = tasks.find(
-      t => t.id === Number(req.params.id)
-    );
-
-    if (!task) {
-      return res.status(404).json({
-        error: "Task not found."
-      });
-    }
-
-    const { status } = req.body;
-
-    if (!status) {
-      return res.status(400).json({
-        error: "A 'status' field is required."
-      });
-    }
-
-    task.status = status;
-
-    writeTasks(tasks);
-
-    res.json(task);
-
-  } catch (err) {
-    res.status(500).json({
-      error: "Unable to update task."
+  if (!task) {
+    return res.status(404).json({
+      error: "Task not found."
     });
   }
+
+  const { status } = req.body;
+
+  if (!status) {
+    return res.status(400).json({
+      error: "A 'status' field is required."
+    });
+  }
+
+  // Update in-memory object
+  task.status = status;
+
+  // Attempt to write back locally (ignored safely on read-only environments like Vercel)
+  try {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(tasks, null, 2));
+  } catch (err) {
+    console.warn("File write skipped (read-only filesystem):", err.message);
+  }
+
+  res.json(task);
 });
 
-// Local development
+// Local development server execution
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(
-      `TechBridge API running at http://localhost:${PORT}`
-    );
+    console.log(`TechBridge API running at http://localhost:${PORT}`);
   });
 }
 
+// Critical export for Vercel
 module.exports = app;
