@@ -11,6 +11,9 @@ const DATA_FILE = path.join(__dirname, "tasks.json");
 
 app.use(express.json());
 
+// Serve the frontend files from the same Vercel deployment.
+app.use(express.static(__dirname));
+
 // CORS Setup
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
