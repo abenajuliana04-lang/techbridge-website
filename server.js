@@ -45,18 +45,6 @@ function loadTasks() {
 // Initial load
 loadTasks();
 
-// Home route
-app.get("/", (req, res) => {
-  res.json({
-    message: "TechBridge Task Management API",
-    status: "running",
-    endpoints: {
-      status: "/api/status",
-      tasks: "/api/tasks"
-    }
-  });
-});
-
 // Health check
 app.get("/api/status", (req, res) => {
   res.json({
